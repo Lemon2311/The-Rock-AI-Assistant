@@ -48,18 +48,29 @@ class SidebarWebviewProvider {
 }
 
 function getWebviewContent() {
-    return `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Webview</title>
-    </head>
-    <body>
-        <h1>Hello from Webview!</h1>
-    </body>
-    </html>`;
+    // Use Node.js file system module to read the file
+    const fs = require('fs');
+    const path = require('path');
+
+    // Assuming sidebarWebview.html is in the same directory as this script
+    const filePath = path.join(__dirname, 'sidebarWebview.html');
+
+    try {
+        // Read the file contents synchronously
+        const content = fs.readFileSync(filePath, 'utf8');
+        return content;
+    } catch (err) {
+        // Handle any errors during file reading
+        console.error('Error reading the file:', err);
+        return '';
+    }
 }
+
+// Example of using the function
+const webviewContent = getWebviewContent();
+console.log(webviewContent);
+
+ 
 
 function deactivate() {}
 

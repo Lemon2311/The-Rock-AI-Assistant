@@ -1,14 +1,11 @@
 const vscode = require('vscode');
 
-/**
- * @param {vscode.ExtensionContext} context
- */
 function activate(context) {
     console.log('Congratulations, your extension "the-rock-ai-assistant" is now active!');
 
     registerHelloWorldCommand(context);
     registerInputCommand(context);
-    registerSidebarWebviewCommand(context);
+    registerSidebarWebviewProvider(context);
 }
 
 function registerHelloWorldCommand(context) {
@@ -30,19 +27,24 @@ function registerInputCommand(context) {
     context.subscriptions.push(disposableInputCommand);
 }
 
-function registerSidebarWebviewCommand(context) {
-    let disposableSidebarWebview = vscode.commands.registerCommand('the-rock-ai-assistant.sidebarWebview', () => {
-        const panel = vscode.window.createWebviewPanel(
-            'sidebarWebview', // Identifies the type of the webview. Used internally
-            'Webview', // Title of the panel displayed to the user
-            vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-            {} // Webview options.
-        );
+function registerSidebarWebviewProvider(context) {
+    const provider = new SidebarWebviewProvider();
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider(
+            'theRockAiAssistant.sidebarWebview', // This ID should match the one in your package.json
+            provider
+        )
+    );
+}
 
-        panel.webview.html = getWebviewContent();
-    });
+class SidebarWebviewProvider {
+    resolveWebviewView(webviewView) {
+        webviewView.webview.options = {
+            enableScripts: true
+        };
 
-    context.subscriptions.push(disposableSidebarWebview);
+        webviewView.webview.html = getWebviewContent();
+    }
 }
 
 function getWebviewContent() {
@@ -64,4 +66,4 @@ function deactivate() {}
 module.exports = {
     activate,
     deactivate
-}
+};

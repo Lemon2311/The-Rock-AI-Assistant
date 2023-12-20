@@ -8,6 +8,11 @@
   },
   "categories": ["Other"],
   "main": "./extension.js",
+  "activationEvents": [
+    "onView:the-rock-ai-assistant.sidebarWebview",
+    "onCommand:the-rock-ai-assistant.helloWorld",
+    "onCommand:the-rock-ai-assistant.inputCommand"
+  ],
   "contributes": {
     "commands": [
       {
@@ -17,11 +22,6 @@
       {
         "command": "the-rock-ai-assistant.inputCommand",
         "title": "Input Command"
-      },
-      {
-        "command": "the-rock-ai-assistant.sidebarWebview",
-        "title": "Open Sidebar Webview",
-        "category": "The Rock AI Assistant"
       }
     ],
     "viewsContainers": {
@@ -37,17 +37,13 @@
       "theRockAiAssistant": [
         {
           "type": "webview",
-          "id": "sidebar-webview",
-          "name": "Webview",
-          "icon": "media/webview-icon.svg",
-          "canToggleVisibility": true
+          "id": "theRockAiAssistant.sidebarWebview",
+          "name": "The Rock AI Assistant Sidebar",
+          "icon": "media/webview-icon.svg"
         }
       ]
     }
   },
-  "activationEvents": [
-    "onView:theRockAiAssistant"
-  ],
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",

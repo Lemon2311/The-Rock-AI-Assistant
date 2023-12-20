@@ -6,11 +6,8 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "activationEvents": [
-    "onView:iconView",
     "onCommand:the-rock-ai-assistant.helloWorld",
     "onCommand:the-rock-ai-assistant.inputCommand"
   ],
@@ -36,10 +33,12 @@
       ]
     },
     "views": {
-      "iconContainer": [
+      "webview": [
         {
           "id": "iconView",
-          "name": "Icons"
+          "name": "Icons",
+          "webview": "media/icon.html",
+          "retainContextWhenHidden": true
         }
       ]
     }

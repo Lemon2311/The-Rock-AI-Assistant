@@ -17,6 +17,10 @@
       {
         "command": "the-rock-ai-assistant.inputCommand",
         "title": "Input Command"
+      },
+      {
+        "command": "the-rock-ai-assistant.sidebarWebview",
+        "title": "Open Sidebar Webview"
       }
     ],
     "viewsContainers": {
@@ -31,10 +35,10 @@
     "views": {
       "webview": [
         {
-          "id": "iconView",
-          "name": "Icons",
-          "webview": "media/icon.html",
-          "retainContextWhenHidden": true
+          "type": "webview",
+          "id": "sidebar-webview",
+          "name": "Webview",
+          "icon": "media/icon.html"
         }
       ]
     }

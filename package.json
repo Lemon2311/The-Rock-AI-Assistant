@@ -20,29 +20,34 @@
       },
       {
         "command": "the-rock-ai-assistant.sidebarWebview",
-        "title": "Open Sidebar Webview"
+        "title": "Open Sidebar Webview",
+        "category": "The Rock AI Assistant"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "iconContainer",
-          "title": "Icons",
-          "icon": "media/icon.svg"
+          "id": "theRockAiAssistant",
+          "title": "The Rock AI Assistant",
+          "icon": "media/rock-icon.svg"
         }
       ]
     },
     "views": {
-      "webview": [
+      "theRockAiAssistant": [
         {
           "type": "webview",
           "id": "sidebar-webview",
           "name": "Webview",
-          "icon": "media/icon.html"
+          "icon": "media/webview-icon.svg",
+          "canToggleVisibility": true
         }
       ]
     }
   },
+  "activationEvents": [
+    "onView:theRockAiAssistant"
+  ],
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",

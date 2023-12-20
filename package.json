@@ -1,0 +1,55 @@
+{
+  "name": "the-rock-ai-assistant",
+  "displayName": "The Rock AI Assistant",
+  "description": "The Rock AI Assistant for your everyday coding needs",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:helloWorldView",
+    "onCommand:the-rock-ai-assistant.helloWorld"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "the-rock-ai-assistant.helloWorld",
+      "title": "Hello World"
+    }],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "helloWorldContainer",
+          "title": "Hello World",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "helloWorldContainer": [
+        {
+          "id": "helloWorldView",
+          "name": "Hello World"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
+

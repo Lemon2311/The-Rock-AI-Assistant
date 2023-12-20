@@ -31,7 +31,7 @@ function registerSidebarWebviewProvider(context) {
     const provider = new SidebarWebviewProvider();
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(
-            'theRockAiAssistant.sidebarWebview', // This ID should match the one in your package.json
+            'theRockAiAssistant.sidebarWebview', // This ID should match the one in package.json
             provider
         )
     );
@@ -48,11 +48,10 @@ class SidebarWebviewProvider {
 }
 
 function getWebviewContent() {
-    // Use Node.js file system module to read the file
+    
     const fs = require('fs');
     const path = require('path');
 
-    // Assuming sidebarWebview.html is in the same directory as this script
     const filePath = path.join(__dirname, 'sidebarWebview.html');
 
     try {
@@ -63,14 +62,8 @@ function getWebviewContent() {
         // Handle any errors during file reading
         console.error('Error reading the file:', err);
         return '';
-    }
+    }//could be done better async
 }
-
-// Example of using the function
-const webviewContent = getWebviewContent();
-console.log(webviewContent);
-
- 
 
 function deactivate() {}
 

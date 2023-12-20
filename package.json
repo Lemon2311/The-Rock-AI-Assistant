@@ -9,9 +9,7 @@
   "categories": ["Other"],
   "main": "./extension.js",
   "activationEvents": [
-    "onView:the-rock-ai-assistant.sidebarWebview",
-    "onCommand:the-rock-ai-assistant.helloWorld",
-    "onCommand:the-rock-ai-assistant.inputCommand"
+    "onView:the-rock-ai-assistant.sidebarWebview"
   ],
   "contributes": {
     "commands": [

@@ -10,29 +10,36 @@
     "Other"
   ],
   "activationEvents": [
-    "onView:helloWorldView",
-    "onCommand:the-rock-ai-assistant.helloWorld"
+    "onView:iconView",
+    "onCommand:the-rock-ai-assistant.helloWorld",
+    "onCommand:the-rock-ai-assistant.inputCommand"
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "the-rock-ai-assistant.helloWorld",
-      "title": "Hello World"
-    }],
+    "commands": [
+      {
+        "command": "the-rock-ai-assistant.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "the-rock-ai-assistant.inputCommand",
+        "title": "Input Command"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "helloWorldContainer",
-          "title": "Hello World",
+          "id": "iconContainer",
+          "title": "Icons",
           "icon": "media/icon.svg"
         }
       ]
     },
     "views": {
-      "helloWorldContainer": [
+      "iconContainer": [
         {
-          "id": "helloWorldView",
-          "name": "Hello World"
+          "id": "iconView",
+          "name": "Icons"
         }
       ]
     }
@@ -52,4 +59,3 @@
     "@vscode/test-electron": "^2.3.8"
   }
 }
-

@@ -7,10 +7,6 @@
     "vscode": "^1.85.0"
   },
   "categories": ["Other"],
-  "activationEvents": [
-    "onCommand:the-rock-ai-assistant.helloWorld",
-    "onCommand:the-rock-ai-assistant.inputCommand"
-  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [

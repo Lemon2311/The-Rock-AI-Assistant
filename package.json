@@ -6,7 +6,9 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "main": "./extension.js",
   "activationEvents": [
     "onView:the-rock-ai-assistant.sidebarWebview"
@@ -14,19 +16,26 @@
   "contributes": {
     "commands": [
       {
-        "command": "the-rock-ai-assistant.helloWorld",
-        "title": "Hello World"
+        "command": "the-rock-ai-assistant.readSelectedText",
+        "title": "Read Selected Text"
       },
       {
         "command": "the-rock-ai-assistant.inputCommand",
         "title": "Input Command"
       }
     ],
+    "keybindings": [
+      {
+        "command": "the-rock-ai-assistant.readSelectedText",
+        "key": "ctrl+r",
+        "when": "editorTextFocus"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
           "id": "theRockAiAssistant",
-          "title": "The Rock AI Assistant",
+          "title": "The Rock",
           "icon": "media/rock-icon.svg"
         }
       ]
@@ -36,7 +45,7 @@
         {
           "type": "webview",
           "id": "theRockAiAssistant.sidebarWebview",
-          "name": "The Rock AI Assistant Sidebar",
+          "name": "Chat",
           "icon": "media/webview-icon.svg"
         }
       ]

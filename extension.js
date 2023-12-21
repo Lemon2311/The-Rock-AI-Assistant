@@ -2,10 +2,10 @@ const vscode = require('vscode');
 
 function activate(context) {
     console.log('Congratulations, your extension "the-rock-ai-assistant" is now active!');
-
     registerHelloWorldCommand(context);
     registerInputCommand(context);
     registerSidebarWebviewProvider(context);
+    registerReadSelectedTextCommand(context);
 }
 
 function registerHelloWorldCommand(context) {
@@ -63,6 +63,23 @@ function getWebviewContent() {
         console.error('Error reading the file:', err);
         return '';
     }//could be done better async
+}
+
+function registerReadSelectedTextCommand(context) {
+    let disposableReadSelectedText = vscode.commands.registerCommand('the-rock-ai-assistant.readSelectedText', () => {
+        let editor = vscode.window.activeTextEditor;
+        if (editor) {
+            let selectedText = editor.document.getText(editor.selection);
+            if (selectedText) {
+                vscode.window.showInformationMessage(`Selected Text: ${selectedText}`);
+            } else {
+                vscode.window.showInformationMessage('No text selected.');
+            }
+        } else {
+            vscode.window.showInformationMessage('No active editor.');
+        }
+    });
+    context.subscriptions.push(disposableReadSelectedText);
 }
 
 function deactivate() {}

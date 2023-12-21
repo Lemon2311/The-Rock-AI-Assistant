@@ -9,7 +9,7 @@
 
 The Rock vscode AI Assistant will be built using the chat gpt api, to assist the keyboard worrior in you in your coding adventures in a the Rock like manner.
 <br><br>
-Project Latest Release: [SUEP](# "SuperEarlyUltraBeta")1.0<br>State: core functionality not implemented
+Project Latest Release: [SEUB](# "SuperEarlyUltraBeta")1.0<br>State: core functionality not implemented
 
 Active Commands:
 

@@ -13,10 +13,11 @@ Project Latest Release: [SUEP](# "SuperEarlyUltraBeta")1.0<br>State: core functi
 
 Active Commands:
 
-    helloWorld:
-        Displays a pop-up message with the text "Hello World from The Rock AI Assistant!" in Visual Studio Code.
-        Used for basic extension setup confirmation.
-
-    inputCommand:
-        Opens an input box in VS Code for user text input.
-        After user input and Enter, shows a message with "Input received: " followed by the user's text.
+After Selecting text:
+  Ctrl+R: And the selected text appears in the sidebar webview.
+  
+This will be used in the core functionality. Next step when pressing Ctrl+R after selecting text a input for text will appear,
+there the desired change that the Rock Ai (chat gpt) proposes for your code will appear, with the posibility to accept the change.
+Also when pressing Ctrl+R without selecting text, the text input should appear and send the question to chat gpt, and return the
+response in the sidebar with code with syntax highlighting would be cool.
+  

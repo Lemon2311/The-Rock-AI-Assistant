@@ -75,6 +75,10 @@ function getWebviewContent(selectedText) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Webview</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+        body {font-size:50px;}
+        }
+        </style>
     </head>
     <body>
         <h1>'${selectedText}'</h1>
